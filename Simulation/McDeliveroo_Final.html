@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>McDeliveroo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+		<!-- d3 is for data visualization -->
+		<script type="text/javascript" src="lib/d3.min.js"></script>
+		
+		<!-- inspectElement is useful for debugging javascript objects -->
+		<script type="text/javascript" src="lib/inspectElement.js"></script>
+				
+		<!-- custom styles for this application -->
+		<link rel="stylesheet" href="styles/McDeliveroo.css" media="screen">
+
+</head>
+<!-- Set class to official for more formal font; unofficial for informal font -->
+<body class="official bgColor0">
+	<p style="position:absolute;top:2%;left:53%; font-size:18px">Simulation Parameters</p>
+	
+	<div class = "placeholder-box">
+		<p style="position:absolute;top:2.5%;left:5%"> 1) Simulation Speed </p>
+		<p><input id="slider1" type="range" min="0" value="300" max="1000" step="10" onchange="redrawWindow();" style="position:absolute;top:12.5%;left:5%"/></p>
+		<p style="position:absolute;top:17.5%;left:5%"> 2) Number of Delivery Riders</p>
+	    <p><input id="slider2" type="range" min="5" value="15" max="50" step="1" onchange="redrawWindow();" style="position:absolute;top:27.5%;left:5%" /></p>
+		<p style="position:absolute;top:32.5%;left:5%"> 3) Frequency of Orders</p>
+		<p><input id="slider3" type="range" min="0.0001" value="0.002" max="0.01" step="0.0001" onchange="redrawWindow();" style="position:absolute;top:42.5%;left:5%" /></p>
+		<p style="position:absolute;top:47.5%;left:5%"> 4) Food Preparation Speed</p>
+		<p><input id="slider4" type="range" min="0.05" value="0.2" max="0.4" step="0.01" onchange="redrawWindow();" style="position:absolute;top:57.5%;left:5%" /></p>
+		<p style="position:absolute;top:62.5%;left:5%"> 5) Min Cancellation Time</p>
+		<p><input id="slider5" type="range" min="30" value="60" max="90" step="1" onchange="redrawWindow();" style="position:absolute;top:72.5%;left:5%" /></p>
+		<p style="position:absolute;top:77.5%;left:5%"> 6) Likelihood of Cancellation</p>
+		<p><input id="slider6" type="range" min="0.01" value="0.06" max="1" step="0.05" onchange="redrawWindow();" style="position:absolute;top:87.5%;left:5%" /></p>
+	</div>
+	<div class = "legend-box">
+		<p style="position:absolute;top:1%;left:5%"> Legend </p>
+		<img src="images/House.png" width="30" height="30" style="position:absolute;top:20%;left:5%">
+		<p style="position:absolute;top:17%;left:12%"> = Has not ordered </p>
+		<img src="images/House_Ordered.png" width="30" height="30" style="position:absolute;top:40%;left:5%">
+		<p style="position:absolute;top:37%;left:12%"> = Has ordered </p>
+		<img src="images/Mcd.png" width="30" height="30" style="position:absolute;top:60%;left:5%">
+		<p style="position:absolute;top:57%;left:12%"> = McDonald's Outlet </p>
+		<img src="images/Building.png" width="30" height="30" style="position:absolute;top:80%;left:5%">
+		<p style="position:absolute;top:77%;left:12%"> = Tree </p>
+		<img src="images/Withoutorder.png" width="30" height="30" style="position:absolute;top:20%;left:50%">
+		<p style="position:absolute;top:17%;left:57%"> = Has not received an order </p>
+		<img src="images/Pickup.png" width="30" height="30" style="position:absolute;top:40%;left:50%">
+		<p style="position:absolute;top:37%;left:57%"> = Picking up order </p>
+		<img src="images/Delivery.png" width="30" height="30" style="position:absolute;top:60%;left:50%">
+		<p style="position:absolute;top:57%;left:57%"> = Delivering order </p>
+	</div>
+	<div>
+		<img src="images/logo1.png" width="150" height="150" style="position:absolute;top:20%;left:80%">
+	</div>
+	<!-- The surface is the main playing field for the game -->
+	<svg  id="surface" style="width:100% height:100%" xmlns="http://www.w3.org/2000/svg" version="1.1" onclick="toggleSimStep();">
+	</svg>
+	
+	<div id="title"  style="position:absolute;bottom:0;left:0">McDeliveroo</div>
+
+	</div>
+	
+	<a id="credits" href="https://www.flaticon.com/" style="position:absolute;bottom:0;right:0">Icons by flaticon.com</a>
+	
+	
+	
+	<!-- Anything below this line should be a popup window or dialog or a late-loading library -->
+	
+	<script type="text/javascript" src="lib/McDeliveroo_Final.js"></script>
+	
+</body>
+</html>
+
